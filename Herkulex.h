@@ -44,7 +44,7 @@
 #if defined(ARDUINO) && ARDUINO >= 100  // Arduino IDE Version
 #include "Arduino.h"
 #else
-#include "WProgram.h"
+#include "Arduino.h"
 #endif
 
 

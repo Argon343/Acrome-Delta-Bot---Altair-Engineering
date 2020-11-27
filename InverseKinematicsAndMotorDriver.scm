@@ -6,7 +6,7 @@
       <property name="creator" value="jstraetmans"/>
       <property name="creationdate" value="11/24/20 20:30:22"/>
       <property name="revision" value="0"/>
-      <property name="lastmodifieddate" value="11/26/20 19:21:56"/>
+      <property name="lastmodifieddate" value="11/27/20 14:39:55"/>
       <property name="comments" value=""/>
     </properties>
   </edition>
@@ -743,7 +743,7 @@
                   </properties>
                   <graphics>
                     <location position="top"/>
-                    <label visible="1" font="Arial,10" color="255,255,255,255"/>
+                    <label visible="1" font="Arial,11" color="255,255,255,255"/>
                     <frame shape="triangle" visible="1" color="183,15,19,255" thickness="1.5"/>
                     <background color="183,15,19,255"/>
                   </graphics>
@@ -805,7 +805,7 @@
                   </properties>
                   <graphics>
                     <location position="top"/>
-                    <label visible="1" font="Arial,10" color="255,255,255,255"/>
+                    <label visible="1" font="Arial,11" color="255,255,255,255"/>
                     <frame shape="triangle" visible="1" color="183,15,19,255" thickness="1.5"/>
                     <background color="183,15,19,255"/>
                   </graphics>
@@ -867,7 +867,7 @@
                   </properties>
                   <graphics>
                     <location position="top"/>
-                    <label visible="1" font="Arial,10" color="255,255,255,255"/>
+                    <label visible="1" font="Arial,11" color="255,255,255,255"/>
                     <frame shape="triangle" visible="1" color="183,15,19,255" thickness="1.5"/>
                     <background color="183,15,19,255"/>
                   </graphics>
@@ -929,7 +929,7 @@
                   </properties>
                   <graphics>
                     <location position="top"/>
-                    <label visible="1" font="Arial,10" color="255,255,255,255"/>
+                    <label visible="1" font="Arial,11" color="255,255,255,255"/>
                     <frame shape="triangle" visible="1" color="183,15,19,255" thickness="1.5"/>
                     <background color="183,15,19,255"/>
                   </graphics>
@@ -1631,6 +1631,82 @@
             </section>
           </parameters>
         </block>
+        <block name="Mux" type="block">
+          <template name="system/Routing/Mux"/>
+          <properties>
+            <property name="inlinable" value="0"/>
+            <property name="masked" value="1"/>
+            <property name="atomic" value="0"/>
+          </properties>
+          <graphics>
+            <label position="bottom" visible="0" font="Arial,11" color="255,255,255,255"/>
+            <frame shape="rectangle" visible="1" color="0,0,0,255" thickness="1.5"/>
+            <background color="255,255,255,255"/>
+            <position x="109.43435668945313" y="-208.23666381835938"/>
+            <size width="12" height="144"/>
+            <rotate angle="0"/>
+            <texts>
+              <text name="text1" color="0,0,0,255" clip="1" x="0.5" y="0.5" rotate="1" visible="1" font="Arial,12" align="center"/>
+            </texts>
+            <images>
+              <image name="image1" file="" visible="1" alpha="255" aspectratio="1" x="0" y="0" width="1" height="1" clip="1" rotate="1"/>
+            </images>
+            <flip value="0">
+              <images>
+                <image name="image2" file="" visible="1" alpha="255" aspectratio="1" x="0" y="0" width="1" height="1" clip="1" rotate="1"/>
+              </images>
+            </flip>
+          </graphics>
+          <ports>
+            <port name="" type="variableport">
+              <properties>
+                <property name="iotype" value="in"/>
+                <property name="datatype" value="Explicit"/>
+                <property name="portnumber" value="nin"/>
+              </properties>
+              <graphics>
+                <location position="left"/>
+                <label visible="1" font="Arial,11" color="255,255,255,255"/>
+                <frame shape="triangle" visible="1" color="64,64,64,255" thickness="1.5"/>
+                <background color="64,64,64,255"/>
+              </graphics>
+            </port>
+            <port name="" type="fixedport">
+              <properties>
+                <property name="iotype" value="out"/>
+                <property name="datatype" value="Explicit"/>
+                <property name="portnumber" value="1"/>
+              </properties>
+              <graphics>
+                <location position="right"/>
+                <label visible="1" font="Arial,11" color="255,255,255,255"/>
+                <frame shape="triangle" visible="1" color="64,64,64,255" thickness="1.5"/>
+                <background color="64,64,64,255"/>
+              </graphics>
+            </port>
+          </ports>
+          <parameters>
+            <section name="Parameters">
+              <parameter name="nin" value="3"/>
+              <parametertable name="inports">
+                <columns number="1">
+                  <parameter name="size" value="1"/>
+                </columns>
+                <rows number="nin">
+                  <row>
+                    <value>1</value>
+                  </row>
+                  <row>
+                    <value>1</value>
+                  </row>
+                  <row>
+                    <value>1</value>
+                  </row>
+                </rows>
+              </parametertable>
+            </section>
+          </parameters>
+        </block>
         <block name="CCustomBlock" type="block">
           <template name="system/CustomBlocks/CCustomBlock"/>
           <properties>
@@ -1804,7 +1880,7 @@
                 </rows>
               </parametertable>
               <parameter name="impl" value="0"/>
-              <parameter name="nincludepath" value="1"/>
+              <parameter name="nincludepath" value="3"/>
               <parametertable name="includepath">
                 <columns number="1">
                   <parameter name="path" value="&apos;&apos;"/>
@@ -1812,6 +1888,12 @@
                 <rows number="nincludepath">
                   <row>
                     <value>&apos;D:/DeltaBot&apos;</value>
+                  </row>
+                  <row>
+                    <value>&apos;D:/DeltaBot/hardware/arduino/avr/cores/arduino&apos;</value>
+                  </row>
+                  <row>
+                    <value>&apos;D:/DeltaBot/hardware/tools/avr/avr/include/avr&apos;</value>
                   </row>
                 </rows>
               </parametertable>
@@ -1852,82 +1934,6 @@
               <parameter name="nmode" value="0"/>
               <parameter name="nzcr" value="0"/>
               <parameter name="dept" value="&apos;Standard mode&apos;"/>
-            </section>
-          </parameters>
-        </block>
-        <block name="Mux" type="block">
-          <template name="system/Routing/Mux"/>
-          <properties>
-            <property name="inlinable" value="0"/>
-            <property name="masked" value="1"/>
-            <property name="atomic" value="0"/>
-          </properties>
-          <graphics>
-            <label position="bottom" visible="0" font="Arial,11" color="255,255,255,255"/>
-            <frame shape="rectangle" visible="1" color="0,0,0,255" thickness="1.5"/>
-            <background color="255,255,255,255"/>
-            <position x="109.43435668945313" y="-208.23666381835938"/>
-            <size width="12" height="144"/>
-            <rotate angle="0"/>
-            <texts>
-              <text name="text1" color="0,0,0,255" clip="1" x="0.5" y="0.5" rotate="1" visible="1" font="Arial,12" align="center"/>
-            </texts>
-            <images>
-              <image name="image1" file="" visible="1" alpha="255" aspectratio="1" x="0" y="0" width="1" height="1" clip="1" rotate="1"/>
-            </images>
-            <flip value="0">
-              <images>
-                <image name="image2" file="" visible="1" alpha="255" aspectratio="1" x="0" y="0" width="1" height="1" clip="1" rotate="1"/>
-              </images>
-            </flip>
-          </graphics>
-          <ports>
-            <port name="" type="variableport">
-              <properties>
-                <property name="iotype" value="in"/>
-                <property name="datatype" value="Explicit"/>
-                <property name="portnumber" value="nin"/>
-              </properties>
-              <graphics>
-                <location position="left"/>
-                <label visible="1" font="Arial,11" color="255,255,255,255"/>
-                <frame shape="triangle" visible="1" color="64,64,64,255" thickness="1.5"/>
-                <background color="64,64,64,255"/>
-              </graphics>
-            </port>
-            <port name="" type="fixedport">
-              <properties>
-                <property name="iotype" value="out"/>
-                <property name="datatype" value="Explicit"/>
-                <property name="portnumber" value="1"/>
-              </properties>
-              <graphics>
-                <location position="right"/>
-                <label visible="1" font="Arial,11" color="255,255,255,255"/>
-                <frame shape="triangle" visible="1" color="64,64,64,255" thickness="1.5"/>
-                <background color="64,64,64,255"/>
-              </graphics>
-            </port>
-          </ports>
-          <parameters>
-            <section name="Parameters">
-              <parameter name="nin" value="3"/>
-              <parametertable name="inports">
-                <columns number="1">
-                  <parameter name="size" value="1"/>
-                </columns>
-                <rows number="nin">
-                  <row>
-                    <value>1</value>
-                  </row>
-                  <row>
-                    <value>1</value>
-                  </row>
-                  <row>
-                    <value>1</value>
-                  </row>
-                </rows>
-              </parametertable>
             </section>
           </parameters>
         </block>
