@@ -4,3 +4,6 @@
 [submodule "ArduinoCore-sam"]
 	path = ArduinoCore-sam
 	url = https://github.com/arduino/ArduinoCore-sam
+[submodule "avr-libc"]
+	path = avr-libc
+	url = https://github.com/jstraet/avr-libc
